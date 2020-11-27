@@ -21,3 +21,12 @@ The installation manual is available [here](https://jitsi.github.io/handbook/doc
 开启 Let's Encrypt 时必映射80端口（HTTP_PORT=80）。否则无法验证证书
 WSL环境无法启用录像，因为/dev/** 目录缺失
 JVB_STUN_SERVERS 替换为google服务后才能实现多人视频，否则只能1v1
+阿里云默认有防火墙，腾讯云没有
+
+jibri.yml 在 linux 无法映射 /dev/snd 的问题：
+```
+// https://github.com/jitsi/docker-jitsi-meet/issues/229
+echo "snd-aloop" >> /etc/modules
+modprobe snd-aloop
+lsmod | grep snd_aloop
+```
