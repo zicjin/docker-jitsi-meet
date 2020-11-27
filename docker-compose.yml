@@ -12,7 +12,7 @@ services:
             - ${CONFIG}/web:/config:Z
             - ${CONFIG}/web/letsencrypt:/etc/letsencrypt:Z
             - ${CONFIG}/transcripts:/usr/share/jitsi-meet/transcripts:Z
-            - /home/ubuntu/docker-jitsi-meet/interface_config.js:/defaults/interface_config.js
+            - /root/docker-jitsi-meet/interface_config.js:/defaults/interface_config.js
         environment:
             - ENABLE_LETSENCRYPT
             - ENABLE_HTTP_REDIRECT
